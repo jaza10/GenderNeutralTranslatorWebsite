@@ -1,0 +1,41 @@
+<html>
+<title>NBA Games Worth Watching from Last Night</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://live.staticflickr.com/5326/9163118621_6383b11002_b.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<body>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <a href="https://github.com/jaza10/GamesWorthWatching"> GitHub </a>
+  </div>
+  <div class="w3-display-middle">
+    {% if not results: %}
+    <h1 style="font-size:3em"> No Games Worth Watching from {{ date }} </h1>
+    {% else %}
+    <h1 style="font-size:1em"> Games Worth Watching from {{ date }}
+      {% for key, value in results.items(): %}
+      <li style="font-size:2em">
+        <a href= {{ value.get('game_summary_url') }}> {{ value.get('vteam_name') }} : {{ value.get('hteam_name') }} </a>
+      </li>
+      {% endfor %}
+    {% endif %}  
+    </h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </div>
+</div>
+</body>
+</html>

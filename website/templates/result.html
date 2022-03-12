@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gender Netral Text Translator</h1>
+    <form action=”{{ url_for('make_prediction') }}” method=”post”>
+        <input type="text" name="input_text" class="question" id="nme" required autocomplete="off" />
+        <label for="nme"><span>Enter German Text Here </span></label>
+        <span> {{ output }} </span>
+        <input type="submit" value="Submit!" />
+    </form>
+</body>
