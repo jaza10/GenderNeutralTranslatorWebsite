@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gender Neutral Text Translator</h1>
+    <form id="appForm">
+        <input type="text" name="input_text" class="question" id="nme" required autocomplete="off" />
+        <label><span>Enter German Text Here </span></label>
+        <input type="submit" id="appInput" value="Subscribe">
+
+        <p id="mlOutput"></p>
+    </form>
+
+    <script>
+
+        const form  = document.getElementById('appForm');
+        const mlOutput= document.getElementById('mlOutput');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const textInput = document.getElementById('nme').value
+            console.log(textInput)
+
+            // send this value to machine learning model using js fetch
+            // https://developer.mozilla.org/en-US/docs/Web/API/fetch
+            /*fetch(' url of ML model api')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data));
+                    // output on same page
+                    mlOutput.textContent = data
+                }
+             */
+        });
+    </script>
+</body>

@@ -18,7 +18,7 @@ def input_text():
   #response = requests.get(NBA_url).json()
   #input = []
   #return render_template("index.html", output = make_prediction(input))
-  return render_template("index_css_new.html")
+  return render_template("new_html_mithun_js.html")
 
 @app.route("/predict", methods=['POST'])
 def make_prediction():
